@@ -403,22 +403,69 @@ blockquote {
 	border-left: 3px solid rgb(55, 53, 47);
 }
 
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
 .bookmark-href {
 	font-size: 0.75em;
-	opacity: 0.5;
+	margin-top: 0.25em;
 }
 
 .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
-.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
 .pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
 
-.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
 
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
 
-.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
 
 .highlight-default {
 }
@@ -543,6 +590,16 @@ blockquote {
 .block-color-red_background {
 	background: rgb(251,228,228);
 }
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
 
 .checkbox {
 	display: inline-flex;
@@ -562,9 +619,7 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="6b16ff26-3126-431b-8ef4-0da719d1d4e1" class="page sans"><header><h1 class="page-title">国内服务器连接问题</h1></header><div class="page-body"><h2 id="7682c282-984b-4e88-8473-e73df8e2cc09" class="block-color-brown_background">问题症状</h2><p id="2eabc1d8-71e1-4ca8-aa78-631468c3ffda" class="">用户位于国内，打开PLD.exe之后，Loading时间过长</p><p id="c71a3668-7718-44fb-92b4-0caf727e6733" class="">或一直卡在Loading界面，无法获取二维码，进而无法正常使用</p><h2 id="ce8ccaad-74c4-4b59-91bb-757f67088326" class="block-color-brown_background">连接问题的原因</h2><p id="c1ce84e2-f099-4490-b089-f23866adb769" class="">目前，PasteLikeDoinb托管在Heroku平台上，服务器的地理位置位于美国</p><p id="b5b67a74-1ef9-4342-9bcd-d34e1eeb9778" class="">服务器与客户端的通信为https协议</p><p id="de10ce20-4cb6-48a5-923d-79c504e6cc38" class="">由于包括GFW限制、运营商QoS、出口带宽总量限制、物理距离限制在内的多种原因</p><p id="09c89584-b09d-4c5d-9287-3e855103c27c" class="">目前出入境的加密流量，连接质量经常不佳</p><p id="3fa5a940-1e94-4553-82a5-25f6aa02bed0" class="">
+</style></head><body><article id="6b16ff26-3126-431b-8ef4-0da719d1d4e1" class="page sans"><header><h1 class="page-title">国内服务器连接问题</h1></header><div class="page-body"><h2 id="7682c282-984b-4e88-8473-e73df8e2cc09" class="block-color-brown_background">问题症状</h2><p id="2eabc1d8-71e1-4ca8-aa78-631468c3ffda" class="">用户位于国内，打开PLD.exe之后，Loading时间过长</p><p id="c71a3668-7718-44fb-92b4-0caf727e6733" class="">或一直卡在Loading界面，无法获取二维码，进而无法正常使用</p><h2 id="ce8ccaad-74c4-4b59-91bb-757f67088326" class="block-color-brown_background">连接问题的原因</h2><p id="c1ce84e2-f099-4490-b089-f23866adb769" class="">目前，PasteLikeDoinb托管在Heroku平台上，服务器的地理位置位于美国</p><p id="b5b67a74-1ef9-4342-9bcd-d34e1eeb9778" class="">服务器与客户端的通信为https协议</p><p id="de10ce20-4cb6-48a5-923d-79c504e6cc38" class="">由于包括GFW限制、运营商QoS、出口带宽总量限制、物理距离限制在内的多种原因</p><p id="09c89584-b09d-4c5d-9287-3e855103c27c" class="">目前出入境的加密流量，连接质量可能不佳</p><p id="3fa5a940-1e94-4553-82a5-25f6aa02bed0" class="">
 </p><h2 id="e91ea247-c204-4410-ae01-5deeb19acddc" class="block-color-brown_background">连接问题的解决</h2><h3 id="600f3a6f-3a02-48fa-8f1f-9c0620b76205" class="">服务器端会在近期迁移到国内</h3><p id="b94f5976-90ed-4779-b8bc-d40295501b58" class="">由于在国内开展web服务需要对域名进行备案</p><p id="c4a626b3-0972-486e-8fa1-ea7afce77328" class="">在备案审核通过以后，PLD的服务将会迁移到国内的服务器上，预计连接问题将有很大改善</p><p id="8c905839-b296-4fe1-9a8c-eb8db50bc0b3" class="">
-</p><h3 id="85903ff1-f86a-452c-b38a-ab97845362f8" class="">目前的应急手段</h3><ul id="cbbea2bd-17e3-49f1-92f6-0f2fb98d76b5" class="toggle"><li><details open=""><summary>使用代理可以使上述问题得到改善，但请注意：</summary><p id="7d734163-53f6-4071-a888-5cd805de601e" class="">PLD.exe在开发时，没有被配置为会像浏览器一样，自动使用系统代理</p><p id="0f5812db-9596-4988-b6d8-0aec471605dd" class="">因此，需要通过某些方法指定PLD.exe使用代理进行通信。</p><p id="916155c8-aad5-4d00-83c5-e2e5c2358d98" class="">
-</p><p id="ff3b6605-c3d6-479a-a047-b424b6d09df0" class="">其中一个选项是使用Proxifier，<a href="https://www.proxifier.com/">官方网站</a></p><p id="fa9f5cd2-8449-400b-84e9-cf3f6bd7c349" class="">具体设置可以参考<a href="https://blog.cugxuan.cn/2020/02/14/Proxy/proxy-specify-app-by-proxifier/">这篇文章</a></p><p id="7fe0a630-b3e8-4025-baed-037ae20ddd04" class="">如果无法访问Proxifier的官方网站，交流群699702899内有下载</p><p id="b9bf1f9a-9b57-46d6-83fb-387f45e4aa52" class="">
-</p></details></li></ul><ul id="03f0f131-f894-426f-88ab-c6692368df13" class="toggle"><li><details open=""><summary>也可以尝试使用运营商流量代替家用宽带</summary><p id="501ff7ed-8199-4a3c-b555-e5afa968e7fa" class="">也就是说，将电脑与手机连接，让电脑使用手机的流量</p><p id="2d3ed156-7b63-4b44-abcc-761cc0e4b6fb" class="">这可以解决一部分本地宽带运营商施加的限制，尤其是一些不知名运营商</p><p id="89d3c356-e768-4cd7-ade1-7b7a664644ee" class="">
+</p><h3 id="85903ff1-f86a-452c-b38a-ab97845362f8" class="">目前的应急手段</h3><ul id="cbbea2bd-17e3-49f1-92f6-0f2fb98d76b5" class="toggle"><li><details open=""><summary>使用代理可以使上述问题得到改善</summary><p id="b9bf1f9a-9b57-46d6-83fb-387f45e4aa52" class="">PLD.exe会像浏览器一样自动使用你的系统代理设置</p></details></li></ul><ul id="03f0f131-f894-426f-88ab-c6692368df13" class="toggle"><li><details open=""><summary>也可以尝试使用手机流量代替家用宽带</summary><p id="501ff7ed-8199-4a3c-b555-e5afa968e7fa" class="">也就是说，将电脑与手机连接，让电脑使用手机的流量</p><p id="2d3ed156-7b63-4b44-abcc-761cc0e4b6fb" class="">这可以解决一部分本地宽带运营商施加的限制，尤其是一些不知名运营商</p><p id="89d3c356-e768-4cd7-ade1-7b7a664644ee" class="">
 </p><p id="90f72c3f-58a1-48fe-acf0-89fbb0c826f8" class="">注意流量消耗！玩游戏本身和PLD的流量都不会太大，</p><p id="33e06172-3e42-40ab-afc8-f12412a9019c" class="">但是可能会有在后台更新软件之类的行为</p><p id="7f81f4fd-deab-4f79-9907-d34d94d2ae24" class="">推荐在Windows中设置”将此连接设置为按流量计费的连接“</p></details></li></ul></div></article></body></html>
